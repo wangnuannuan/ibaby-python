@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #d7d7d7 url('http://subtlepatterns.com/patterns/binding_light.png') repeat top center;
+}
+
+.lightoff{
+  height:200px;
+  width:100px;"
+  color:red;
+}
+.lighton{
+  height:200px;
+  width:100px;
+  color:#00ff00;
+}
+
+.track:after {
+
+}
+
+
