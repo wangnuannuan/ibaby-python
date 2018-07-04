@@ -47,6 +47,8 @@
     10. `allow-empty-commit`,可选，默认false, Enabled if only keep-history is true.
     11. `github-url`:可选，自托管github 企业的url.默认github.com
     12. `verbose`：可选，对内部步骤进行详细说明，默认为false
+    
+    https://docs.travis-ci.com/user/getting-started
   
 
     
