@@ -33,6 +33,20 @@
   
   - 设置 GitHub令牌
     需要使用`public_repo`或`repo`(私有存储库)生成一个个人访问令牌，因为令牌是私有的，在` repository settings `安全的传递给Travis或通过`.travis.yml`加密变量
+  - 其他配置
+  
+    1. `local-dir`:相对于当前目录的的目录，到github页面的的目录为默认目录
+    2. `repo`: Repo slug 默认为当前repo
+    3. `target-branch:`  推送`local-dir`的内容的分支，默认`gh-pages`
+    4. `keep-history:`创建增量提交，而不是force push 默认 false
+    5. `fqdn`:可选，为你的网站设置一个自定义域，默认为没有自定义域支持
+    6. `project-nam`:用于元数据，默认fqdn 或 repo slug
+    7. `email`:可选，提交信息，默认`deploy@travis-ci.org`
+    8. `name`:可选，提交者，默认`Deployment Bot`
+    9. `committer-from-gh`:可选。默认值false,允许使用令牌的所有者名称和电子邮件提交 覆盖`email`和`name`
+    10. `allow-empty-commit`,可选，默认false, Enabled if only keep-history is true.
+    11. `github-url`:可选，自托管github 企业的url.默认github.com
+    12. `verbose`：可选，对内部步骤进行详细说明，默认为false
   
 
     
