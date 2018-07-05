@@ -64,6 +64,23 @@
 
     https://docs.travis-ci.com/user/getting-started
   
+  ## 定制构建
+  Travis CI为每种编程语言提供默认构建环境和一组默认步骤。可以在`.travis.yml`定制任何步骤，ravis CI使用`.travis.yml`存储库根目录中的文件来了解您的项目以及您希望如何执行构建。`.travis.yml`可以非常简约或有很多自定义。您的`.travis.yml`文件可能包含哪些信息的几个示例：
+- 您的项目使用什么编程语言
+- 在每次构建之前要执行哪些命令或脚本（例如，安装或克隆项目的依赖项）
+- 用于运行测试套件的命令
+- 电子邮件，Campfire和IRC会议室通知有关构建失败的信息
+### 构建生命周期
+一个构建有两个步骤：
+- `install`：安装需要的依赖
+- `script`:运行构建脚本
+可以在安装步骤之前或在`script`前后自定义命令
+其中`install`步骤之前的命令是`before_install`,对应的`install`是`before_script`和`after_script`
+
+在`before_install`中安装项目需要的其他依赖比如ubuntu的pacakages或定制的services
+-----------------------------
+#### 构建matrix
+当您将Runtime，Environment和Exclusions / Inclusions这三个主要配置选项组合在一起时，您可以使用所有可能组合的矩阵
 
     
     
