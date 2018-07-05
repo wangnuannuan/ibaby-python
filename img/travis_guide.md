@@ -47,7 +47,21 @@
     10. `allow-empty-commit`,可选，默认false, Enabled if only keep-history is true.
     11. `github-url`:可选，自托管github 企业的url.默认github.com
     12. `verbose`：可选，对内部步骤进行详细说明，默认为false
-    
+
+- 在Heroku上运行apps(heroku是支持多种编程语言的云平台)
+  travis ci在构建成功之后会自动部署heroku应用
+
+- 加载RubyGems(Ruby 的一个包管理器,它提供一个分发 Ruby 程序和库的标准格式,还提供一个管理程序包安装的工具)
+- 发送通知
+  travis ci 可以通过email, IRC, chat or custom webhooks发送构建结果
+  
+  - 默认情况下，邮件通知会发送到提交以及代码库的成员(这些人要具备以下权限)：
+    - 公共存储库的pull 或管理权限
+    - 私有库的pull push或管理权限
+  - 发送邮件通知的条件:
+    - 构建刚刚破坏或仍然被破坏
+    - 以前破坏的构建刚刚修复
+
     https://docs.travis-ci.com/user/getting-started
   
 
