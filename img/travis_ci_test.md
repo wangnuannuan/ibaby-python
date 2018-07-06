@@ -11,24 +11,24 @@ To start using Travis CI, make sure you have all of the following:
 Click the settings to set your repository.
 3.	Add a `.travis.yml` file to your repository to tell Travis CI what to do.
 
-    language: python
-    sudo: required
-    dist: trusty
-    branches:
-      except:
-        - gh-pages
-    python:
-      - "3.6"
-    before_install:
-      - bash .travis/before_install.sh
-      # setup git
-      - git config --local user.name "wangnuannuan"
-      - git config --local user.email "1961295051@qq.com.com"
-    script:
-      - bash .travis/script.sh
-    matrix:
-      include:
-        - env: TOOLCHAIN="sphinx" BOARD="none" BD_VER="none" CUR_CORE="none"
+        language: python
+        sudo: required
+        dist: trusty
+        branches:
+          except:
+            - gh-pages
+        python:
+          - "3.6"
+        before_install:
+          - bash .travis/before_install.sh
+          # setup git
+          - git config --local user.name "wangnuannuan"
+          - git config --local user.email "1961295051@qq.com.com"
+        script:
+          - bash .travis/script.sh
+        matrix:
+          include:
+            - env: TOOLCHAIN="sphinx" BOARD="none" BD_VER="none" CUR_CORE="none"
     language : python    select python as the programming language and the version is 3.6
     sudo: required
     dist: trusty
