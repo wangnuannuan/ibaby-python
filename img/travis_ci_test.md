@@ -1,15 +1,13 @@
-## Prerequisites
+### Prerequisites
 To start using Travis CI, make sure you have all of the following:
 -	GitHub login
 -	Admin permissions for a project hosted on GitHub
 -	Working code in your project
 -	Working build or test script
-## To get started with Travis CI 
-###	Using your GitHub account, sign in to GitHub and add the Travis CI app to the repository you want to activate. You’ll need Admin permissions for that repository.
-###	Once you’re signed in to Travis CI, and we’ve synchronized your GitHub repositories, go to your profile page and enable the repository you want to build: 
-
-Click the settings to set your repository.
-###	Add a `.travis.yml` file to your repository to tell Travis CI what to do.
+### To get started with Travis CI 
+1.	Using your GitHub account, sign in to GitHub and add the Travis CI app to the repository you want to activate. You’ll need Admin permissions for that repository.
+2.	Once you’re signed in to Travis CI, and we’ve synchronized your GitHub repositories, go to your profile page and enable the repository you want to build, Click the settings to set your repository.
+3.	Add a `.travis.yml` file to your repository to tell Travis CI what to do.
 
         language: python
         sudo: required
@@ -74,5 +72,25 @@ Click the settings to set your repository.
 
   If `script` returns a non-zero exit code, the build is failed, but continues to run before being marked as failed.
 
-###	Add the .travis.yml file to git, commit and push, to trigger a Travis CI build:
-###	Check the build status page to see if your build passes or fails, according to the return status of the build command by visiting Travis CI .com build status and selecting your repository.
+  When you combine the three main configuration options of Runtime, Environment and Exclusions/Inclusions you have a matrix of all possible combinations:
+
+        matrix:
+          include:
+            - env: TOOLCHAIN="sphinx" BOARD="none" BD_VER="none" CUR_CORE="none"
+              os: linux
+            - env: TOOLCHAIN="gnu" BOARD="emsk" BD_VER="11" CUR_CORE="arcem4"
+              os: linux
+              compiler: gcc
+
+  The `include`  adds particular jobs to the build matrix which have already been populated.
+
+  You can embed status images (also known as badges or icons) that show the status of your build into your README or website.
+
+    1. The URLs for status images are shown on your Travis CI Repository page:
+      Click the status image in the top right to open a dialog box containing common templates for the status image URL in markdown, html, etc.
+    2. Select the branch and template in the dialog box
+    3. Copy the text and paste it into your README or website. You should now be able to view the Build status images for public repositories are publicly available on Travis CI.
+
+
+4.	Add the .travis.yml file to git, commit and push, to trigger a Travis CI build:
+5.	Check the build status page to see if your build passes or fails, according to the return status of the build command by visiting Travis CI .com build status and selecting your repository.
