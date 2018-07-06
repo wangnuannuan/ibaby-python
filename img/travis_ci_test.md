@@ -47,11 +47,11 @@ Click the settings to set your repository.
 
   A build on Travis CI is made up of two steps:
 
-  1.	install: install any dependencies required
-  2.	script: run the build script
+  1.	`install`: install any dependencies required
+  2.	`script`: run the build script
 
-  You can run custom commands before the installation step (before_install), and before (before_script) or after (after_script) the script step.
-  In a before_install step, you can install additional dependencies required by your project such as Ubuntu packages or custom services.
+  You can run custom commands before the installation step (`before_install`), and before (`before_script`) or after (`after_script`) the script step.
+  In a `before_install` step, you can install additional dependencies required by your project such as Ubuntu packages or custom services.
           
           - bash .travis/before_install.sh
 
@@ -64,14 +64,13 @@ Click the settings to set your repository.
 
   If any error occur in this step, an error message will be printed , the exit the shell and return 1.If `before_install`, `install` or `before_script` returns a non-zero exit code, the build is errored and stops immediately.
 
-  script:
-
+      script:
         - bash .travis/script.sh
 
-    1. add arc gnu to environmental variable.
-    2. apply patches for embARC
-    3. add branch gh-pages and deploy to github pages. First , create personal access token in github, then set environment variable named GH_TOKEN with the personal access token.
-    4. use the gnu to complie the ‘example’ with different board version or CUR_CORE
+  - add arc gnu to environmental variable.
+  - apply patches for embARC
+  - add branch gh-pages and deploy to github pages. First , create personal access token in github, then set environment variable named GH_TOKEN with the personal access token.
+  - use the gnu to complie the ‘example’ with different board version or CUR_CORE
 
   If `script` returns a non-zero exit code, the build is failed, but continues to run before being marked as failed.
 
