@@ -45,8 +45,7 @@ To start using Travis CI, make sure you have all of the following:
 
   A build on Travis CI is made up of two steps:
 
-  1.	`install`: install any dependencies required
-  2.	`script`: run the build script
+  1.	`install`: install any dependencies required  2.	`script`: run the build script
   You can run custom commands before the installation step (`before_install`), and before (`before_script`) or after (`after_script`) the script step.
   In a `before_install` step, you can install additional dependencies required by your project such as Ubuntu packages or custom services.
           
@@ -85,10 +84,10 @@ To start using Travis CI, make sure you have all of the following:
 
   You can embed status images (also known as badges or icons) that show the status of your build into your README or website.
 
-   1. The URLs for status images are shown on your Travis CI Repository page:
+   - The URLs for status images are shown on your Travis CI Repository page:
       Click the status image in the top right to open a dialog box containing common templates for the status image URL in markdown, html, etc.
-   2. Select the branch and template in the dialog box
-   3. Copy the text and paste it into your README or website. You should now be able to view the Build status images for public repositories are publicly available on Travis CI.
+   - Select the branch and template in the dialog box
+   - Copy the text and paste it into your README or website. You should now be able to view the Build status images for public repositories are publicly available on Travis CI.
 
 
 4.	Add the .travis.yml file to git, commit and push, to trigger a Travis CI build:
