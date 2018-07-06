@@ -1,15 +1,15 @@
-### Prerequisites
+## Prerequisites
 To start using Travis CI, make sure you have all of the following:
 -	GitHub login
 -	Admin permissions for a project hosted on GitHub
 -	Working code in your project
 -	Working build or test script
-### To get started with Travis CI 
-1.	Using your GitHub account, sign in to GitHub and add the Travis CI app to the repository you want to activate. You’ll need Admin permissions for that repository.
-2.	Once you’re signed in to Travis CI, and we’ve synchronized your GitHub repositories, go to your profile page and enable the repository you want to build: 
-<img src = ></img>
+## To get started with Travis CI 
+###	Using your GitHub account, sign in to GitHub and add the Travis CI app to the repository you want to activate. You’ll need Admin permissions for that repository.
+###	Once you’re signed in to Travis CI, and we’ve synchronized your GitHub repositories, go to your profile page and enable the repository you want to build: 
+
 Click the settings to set your repository.
-3.	Add a `.travis.yml` file to your repository to tell Travis CI what to do.
+###	Add a `.travis.yml` file to your repository to tell Travis CI what to do.
 
         language: python
         sudo: required
@@ -74,5 +74,5 @@ Click the settings to set your repository.
 
   If `script` returns a non-zero exit code, the build is failed, but continues to run before being marked as failed.
 
-4.	Add the .travis.yml file to git, commit and push, to trigger a Travis CI build:
-5.	Check the build status page to see if your build passes or fails, according to the return status of the build command by visiting Travis CI .com build status and selecting your repository.
+###	Add the .travis.yml file to git, commit and push, to trigger a Travis CI build:
+###	Check the build status page to see if your build passes or fails, according to the return status of the build command by visiting Travis CI .com build status and selecting your repository.
