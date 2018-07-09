@@ -1124,28 +1124,31 @@ class Repo(object):
         self.rev = None
         if os.path.isdir(self.path):
             try:
-                self.scm = self.getscm()
+                self.scm = self.getscm() # the full path of .git or .gh or .bld  file 
                 if self.scm and self.scm.name == 'bld':
                     self.is_build = True
             except ProcessException:
                 pass
 
             try:
-                self.url = self.geturl()
+                self.url = self.geturl() # self.url replace("\\", "/")
+                logger.debug("Repo url %s",self.url)
                 if not self.url:
                     self.is_local = True
                     ppath = self.findparent(os.path.split(self.path)[0])
-                    self.url = relpath(ppath, self.path).replace("\\", "/") if ppath else os.path.basename(self.path)
+                    self.url = relpath(ppath, self.path).replace("\\", "/") if ppath else os.path.basename(self.path) 
+                    logger.debug("Repo url :%s",self.url)
             except ProcessException:
                 pass
 
             try:
                 self.rev = self.getrev()
+                logger.debug("Repo rev :%s",self.rev)
             except ProcessException:
                 pass
 
             try:
-                self.libs = list(self.getlibs())
+                self.libs = list(self.getlibs()) # .bld .lib repo
             except ProcessException:
                 pass
 
