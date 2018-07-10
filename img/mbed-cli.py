@@ -1,4 +1,4 @@
-##mbed-os/tools/make.py
+mbed_lstools.create##mbed-os/tools/make.py
 smbed_settings.py#
 class Global:
   path = c:\\users\\jingru\\.mbed
@@ -19,9 +19,11 @@ Class Repo:
 
   def formurl() # repo.name repo.path repo.url repo.rec repo.cache
   
-  def formlib
-  
-  def frmrepo(path) # 返回{repo.path = abs(path), repo.name = base(path),cache = 用户目录/mbed_cache}
+     def formlib
+
+      
+
+      def frmrepo(path) # 返回{repo.path = abs(path), repo.name = base(path),cache = 用户目录/mbed_cache}
   def sync()
   def isinsecure(url) # 
   def getscm()# 查找当前路径下是否有.git .hg .bld
@@ -63,5 +65,24 @@ Class Repo:
   def ignore_build_dir()#self.path/BUILD下'.mbedignore'中写入*\n，不存在时创建
   def detect_target(info = None)
   def get_detected_targets()
+  
+  mbed_lstools
+  
+  def craete() # 返回一个类mbed-enabled platform detection for windows,Linux with udev, or Mac OS X
+  def mbed_os_support() # 根据系统信息返回 windows7 / LinuxGeneric/Darwin
+  def mbed_lstools_os_info()#返回当前使用系统信息 windows7 
+  
+  lstools_base.py
+  
+    class MbedLsToolsBase(object):# mbed-lstools的基类定义了mbed-ls工具接口，用于检测主机上的mbed设备
+      os_supported = []#此模块支持哪些操作系统＃注意：mbed-lstools_ *模块可以支持多个操作系统
+      HOME_DIR = expanduser("~")#将存储全局的目录（OS用户特定的模拟）
+      MOCK_FILE_NAME = '.mbedls-mock'
+      RETARGET_FILE_NAME = 'mbedls.json'
+      DETAILS_TXT_NAME = 'DETAILS.TXT'
+      MBED_HTM_NAME = 'mbed.htm'
+      
+  
+  
   
   
