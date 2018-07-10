@@ -1,3 +1,4 @@
+
 mbed_lstools.create##mbed-os/tools/make.py
 smbed_settings.py#
 class Global:
@@ -13,7 +14,14 @@ Class Cfg :
   def get(var) # 返回 .mbed 文件中var对应的值
   def list() # 以列表的形式返回.mbed 文件中var ！= ROOT 的其他对应的值
   def cache() # 从.mbed 中获取 {'cache':enable,cache_base: CACHE_DIR 路径，cache_dir:cache_base/mbed-cache}
-  
+
+  Class Global# 主用户目录下的.mbed文件，Cfg.path = 用户目录，方法为Cfg的方法
+  def mbed_sterm(port, baudrate=9600, echo=True, reset=False, sterm=False): # 
+    class MbedTerminal:
+      def init:# 根据信息打开一个串口，释放掉input_buffer
+      def terminal： #终端程序
+      def reset:#serial 设置break
+    
 
 Class Repo:
 
