@@ -32,9 +32,9 @@ Class Repo:
       
 
       def frmrepo(path) # 返回{repo.path = abs(path), repo.name = base(path),cache = 用户目录/mbed_cache}
-  def sync()
-  def isinsecure(url) # 
-  def getscm()# 查找当前路径下是否有.git .hg .bld
+      def sync()# self.scm==bld self.is_build = True;self.url ;self.rev;self.lib
+      def isinsecure(url) # 
+      def getscm()# 查找当前路径下是否有.git .hg .bld
   
   Class Program():
   
