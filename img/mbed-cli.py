@@ -1,4 +1,4 @@
-mbed-os/tools/make.py
+##mbed-os/tools/make.py
 smbed_settings.py#
 class Global:
   path = c:\\users\\jingru\\.mbed
@@ -55,5 +55,13 @@ Class Repo:
   def add_tools(path) # 如果path下没有tools文件夹，clone 下载mbed sdk
   def update_tools(path) #cd 到path下的tools,更新用git repo update
   def get_tools(path) # get_tools_dir 返回路径
-  def get_env(path)
+  def get_env(path)# .mbed中编译器地址值，复制给环境变量
+  def get_target(target)# 返回target target .mbed中TARGET,auto detect检测连接的板子
+  def get_toolchain(toolchain) # 返回toolchain 或.mbed中的TOOLCHAIN
+  def set_default(target,toolchain)# 设置.mbed中TARGET 和TOOLCHAIN
+  def get_macros()#按行读取MACROS.txt，以列表形式返回
+  def ignore_build_dir()#self.path/BUILD下'.mbedignore'中写入*\n，不存在时创建
+  def detect_target(info = None)
+  def get_detected_targets()
+  
   
