@@ -1,3 +1,20 @@
+
+'''4.	Git add work_apth_now/xxx /mbed-os.lib 添加到暂存区
+5.	If top
+    work_apth_now/xxx 下不存在mbed_settings.py，将mbed-tools-path下的default_setting.py复制过去，然后check_requirement
+
+import_(url, path=None, ignore=False, depth=None, protocol=None, insecure=False, offline=False, top=True):
+"Imports mbed program and its dependencies from a source control based URL\n"
+"(GitHub, Bitbucket, mbed.org) into the current directory or specified\npath.\n"
+"Use 'mbed add <URL>' to add a library into an existing program."))
+1.	url : translate 'mbed-os' to https://github.com/ARMmbed/mbed-os
+2.	if top 存在.mbed 抛出错误
+3.	当找不到 INSECURE 并且url 是'http', 'https', 'ssh', 'git'其中一种，抛出错误。
+4.	判断 当前路径/mbed-os存在，当不为空则抛出错误
+5.	当 url 在本地存在，则在本地导入mbed-os
+6.	If top Importing program else Adding library
+7.	Clone mbed-os 或program
+8.	Cd进去在.mbed中添加 ROOT = .'''
 from __future__ import print_function
 
 try:
