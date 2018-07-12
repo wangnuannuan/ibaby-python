@@ -1,6 +1,18 @@
 
 mbed_lstools.create##mbed-os/tools/make.py
 smbed_settings.py#
+
+def log(msg) # 打印信息
+def msg(msg) # 以 mbed msg的格式返回信息
+def info(msg,level=1)# level<=0时，按行将字符串以mbed xxx的形式返回
+def action(msg)# 按行将信息以mbed xxx的形式打印
+def warning(msg) #错误信息输出
+def error(msg,code=-1)#按行输出错误，结束返回代码code
+def offline_warning(offline, top=True)# 根据两个参数都为True打印 OFFLINE MODE信息
+def progress_cursor(title, percent, max_width=80)
+def progress()#调用progress_cursor，根据次数依次打印|/-\\
+def show_progress()
+
 class Global:
   path = c:\\users\\jingru\\.mbed
   
