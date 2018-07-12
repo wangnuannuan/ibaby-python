@@ -1,4 +1,5 @@
 
+
 mbed_lstools.create##mbed-os/tools/make.py
 smbed_settings.py#
 
@@ -12,7 +13,49 @@ def offline_warning(offline, top=True)# 根据两个参数都为True打印 OFFLI
 def progress_cursor(title, percent, max_width=80)
 def progress()#调用progress_cursor，根据次数依次打印|/-\\
 def show_progress()
+def hide_progress(max_width=80) #tty设备标准输出，打印max_width
+def popen(command, stdin=None, **kwargs)# 产生子进程，执行command
+def pquery(command, output_callback=None, stdin=None, **kwargs)#子进程执行command,PIPE进行标准输入输出。Popen.communicate(input=None)
+# 和子进程交互：发送数据到stdin，并从stdout和stderr读数据，直到收到EOF。等待子进程结束。可选的input如有有的话，要为字符串类型。
+# 此函数返回一个元组： (stdoutdata , stderrdata ) 。
+Popen.poll() # 检查子进程是否已结束，设置并返回returncode属性。
+def rmtree_readonly(directory): # 删除目录
+def sizeof_fmt(num, suffix='B'):
+def cd(newdir):# cd到指定路径
+def getcwd(): #返回当前工作路径
 
+  
+class Git():
+  name = "git"  default_branch = 'master'   ignore_file = os.path.join('.git', 'info', 'exclude')
+  
+  def init(path=None)# git init
+  def cleanup(): #删除所有本地分支
+  def clone(url, name=None, depth=None, protocol=None):# git clone url name
+  def add(dest):# git add dest
+  def remove(dest) #git rm -f dest
+  def commit(msg=None)# git commit -a -m msg
+  def publish(all_refs=None):# all_refs true git push --all  ;
+  def fetch() # git fetch --all --tags
+  def discard(clean_files=False)# git reset HEAD; git checkout .; if clean_file git clean -fd
+  def merge(dest) #git merge dest
+  def checkout(rev, clean=False)
+  def update(rev=None, clean=False, clean_files=False, is_local=False):#"update git rev: %s,clean: %s,clean_files；%s",rev,clean,clean_files
+  def status() # git status -s
+  def dirty()# git 'status', '-uno', '--porcelain'
+  def untracked()# git 'ls-files', '--others', '--exclude-standard'
+  def outgoing():# 获得默认的远程分支；本地分支，不存在继续执行，git 'rev-parse' remote localbranch,出错执行git log
+  def isdetached() #  Git.getbranch() == ""返回True
+  def getremote() #Finds default remote
+  def getremotes(rtype='fetch'):#Finds all associated remotes for the specified remote type
+  def seturl(url):# git 'remote', 'set-url', 'origin', url
+  def geturl():# getremotes() ,然后返回对应URL
+  def getrev():# git 'rev-parse', 'HEAD'
+  def getbranch(rev='HEAD'):# git 'rev-parse', '--symbolic-full-name', '--abbrev-ref', rev
+  def getrefs():# git 'show-ref', '--dereference';Get all refs
+  def getbranches(rev=None, ret_rev=False):# Finds branches (local or remote). Will match rev if specified
+  
+  
+    
 class Global:
   path = c:\\users\\jingru\\.mbed
   
