@@ -80,7 +80,7 @@ Class Cfg :
 
 Class Repo:
 
-  def formurl() # repo.name repo.path repo.url repo.rec repo.cache
+  def formurl() # repo.name repo.path repo.url repo.rec repo.cache is_local/is_build = True
   
      def formlib
 
