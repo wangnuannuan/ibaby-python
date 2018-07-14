@@ -1,5 +1,5 @@
 
-
+[test](mbed-cli.md)
 patches_required_folders="library,middleware,os"
 patches_required_folder_list=(${patches_required_folders//,/ }) # ，换成/
 PREV_DIR=$(pwd) #当前目录的全目录名称
